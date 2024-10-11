@@ -15,20 +15,18 @@ function posicaoRandomica() {
     if(document.getElementById('mosquito')) {
         document.getElementById('mosquito').remove()
         if (vidas > 3) {
-
+            window.location.href = 'fim_de_jogo.html'
         } else {
         document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png"
         vidas++
         }
     }
     
-
     var posicaoX = Math.floor(Math.random() * largura) - 90
     var posicaoY = Math.floor(Math.random() * altura) - 90
 
     posicaoX = posicaoX < 0 ? 0 : posicaoX
     posicaoY = posicaoY < 0 ? 0 : posicaoY  
-
 
     var mosquito = document.createElement('img')
     mosquito.src = 'imagens/mosquito.png'
@@ -40,7 +38,6 @@ function posicaoRandomica() {
     mosquito.onclick = function () {
         this.remove()
     }
-
     document.body.appendChild(mosquito)
 }
 
